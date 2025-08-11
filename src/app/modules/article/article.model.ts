@@ -1,37 +1,48 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { TArticle } from "./article.interface";
 
-// Create the Article schema based on the interface
-const ArticleSchema = new Schema<TArticle>(
+interface ArticleDocument extends TArticle, Document {}
+
+const ArticleSchema = new Schema<ArticleDocument>(
   {
     title: {
       type: String,
       required: [true, "Article title is required"],
       unique: true,
     },
-    image: {
+    excerpt: {
       type: String,
-      required: [true, "Article image is required"],
+      required: [true, "Article excerpt is required"],
     },
-    comments: {
-      type: Number,
-      required: true,
-      default: 0,
+    date: {
+      type: String, // or Date if you prefer
+      required: [true, "Article date is required"],
+    },
+    readTime: {
+      type: String,
+      required: [true, "Read time is required"],
+    },
+    author: {
+      type: String,
+      required: [true, "Author is required"],
     },
     category: {
       type: String,
       required: [true, "Article category is required"],
     },
-    description: {
+    image: {
       type: String,
-      required: [true, "Article description is required"],
+      required: [true, "Article image is required"],
+    },
+    href: {
+      type: String,
+      required: [true, "Article link is required"],
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // adds createdAt, updatedAt fields
   }
 );
 
-// Export the model
-const Article = mongoose.model<TArticle>("Article", ArticleSchema);
+const Article = mongoose.model<ArticleDocument>("Articlesss", ArticleSchema);
 export default Article;
