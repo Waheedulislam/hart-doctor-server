@@ -1,9 +1,9 @@
 {
-  "name": "nextmart-server",
+  "name": "hart-doctor-server",
   "version": "1.0.0",
-  "description": "A tour traveler web application server.",
+  "description": "A hart doctor web application server.",
   "main": "server.js",
-  "author": "Next Level Web Development Team",
+  "author": "Waheedul Islam",
   "license": "MIT",
   "scripts": {
     "start": "node dist/server.js",
