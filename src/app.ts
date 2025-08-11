@@ -12,7 +12,7 @@ const app: Application = express();
 // ✅ Allowed origins
 const allowedOrigins = [
   "http://localhost:3000", // Development
-  "https://www.traveltoyourteacher.com", // Production
+  // "https://www.traveltoyourteacher.com", // Production
 ];
 
 // ✅ CORS middleware setup
@@ -37,10 +37,6 @@ app.use(express.urlencoded({ extended: true }));
 // ✅ Main router
 app.use("/api/v1", router);
 
-// ✅ seed admin if needed
-// seedAdmin();
-
-// ✅ Test route
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   const currentDateTime = new Date().toISOString();
   const clientIp = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
@@ -50,7 +46,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 
   res.status(StatusCodes.OK).json({
     success: true,
-    message: "Welcome to the Travler Teacher",
+    message: "Welcome to the Hart Doctor",
     version: "1.0.0",
     clientDetails: {
       ipAddress: clientIp,

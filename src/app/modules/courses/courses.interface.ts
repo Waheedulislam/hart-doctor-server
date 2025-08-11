@@ -1,4 +1,4 @@
-export type TTeacher = {
+export type TCourses = {
   name: string;
   image: string;
   country: string;

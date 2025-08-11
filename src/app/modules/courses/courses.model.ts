@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { TTeacher } from "./teacher.interface";
+import { TCourses } from "./courses.interface";
 
 // Create the Category schema based on the interface
-const TeacherSchema = new Schema<TTeacher>(
+const CourseSchema = new Schema<TCourses>(
   {
     name: {
       type: String,
@@ -31,5 +31,5 @@ const TeacherSchema = new Schema<TTeacher>(
   }
 );
 
-const Teacher = mongoose.model<TTeacher>("Teacher", TeacherSchema);
-export default Teacher;
+const Course = mongoose.model<TCourses>("Courses", CourseSchema);
+export default Course;

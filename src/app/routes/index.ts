@@ -1,31 +1,21 @@
 import { Router } from "express";
-import { UserRoutes } from "../modules/user/user.routes";
-import { AuthRoutes } from "../modules/auth/auth.routes";
+
 import { CategoryRoutes } from "../modules/category/category.routes";
-import { TeacherRoutes } from "../modules/teacher/teacher.route";
-import { ReviewRoutes } from "../modules/review/review.route";
+
 import { ArticleRoutes } from "../modules/article/article.route";
-import { paymentRoutes } from "../modules/payment/payment.routes";
-import { MessagesRoutes } from "../modules/message/message.routes";
+import { CourseRoutes } from "../modules/courses/courses.route";
+import { ReviewRoutes } from "../modules/review/review.route";
 
 const router = Router();
 
 const moduleRoutes = [
   {
-    path: "/user",
-    route: UserRoutes,
-  },
-  {
-    path: "/auth",
-    route: AuthRoutes,
-  },
-  {
     path: "/category",
     route: CategoryRoutes,
   },
   {
-    path: "/teacher",
-    route: TeacherRoutes,
+    path: "/course",
+    route: CourseRoutes,
   },
   {
     path: "/Review",
@@ -34,14 +24,6 @@ const moduleRoutes = [
   {
     path: "/article",
     route: ArticleRoutes,
-  },
-  {
-    path: "/payments",
-    route: paymentRoutes,
-  },
-  {
-    path: "/messages",
-    route: MessagesRoutes,
   },
 ];
 
