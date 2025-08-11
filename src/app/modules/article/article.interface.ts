@@ -1,7 +1,10 @@
 export type TArticle = {
   title: string;
-  image: string;
-  comments: number;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  author: string;
   category: string;
-  description: string;
+  image: string;
+  href: string;
 };
