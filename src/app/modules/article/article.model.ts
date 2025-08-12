@@ -15,7 +15,7 @@ const ArticleSchema = new Schema<ArticleDocument>(
       required: [true, "Article excerpt is required"],
     },
     date: {
-      type: String, // or Date if you prefer
+      type: String,
       required: [true, "Article date is required"],
     },
     readTime: {
