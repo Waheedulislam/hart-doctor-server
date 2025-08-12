@@ -39,8 +39,74 @@ const getSingleCourse = async (productId: string) => {
   }
   return Courses;
 };
+
+// Update article by id
+const updateCourse = async (
+  articleId: string,
+  updateData: Partial<TCourses>
+) => {
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+
+    const updatedArticle = await Course.findByIdAndUpdate(
+      articleId,
+      updateData,
+      {
+        new: true,
+        runValidators: true,
+        session,
+      }
+    );
+
+    if (!updatedArticle) {
+      throw new AppError(StatusCodes.NOT_FOUND, "Article not found");
+    }
+
+    await session.commitTransaction();
+    return updatedArticle;
+  } catch (error) {
+    if (session.inTransaction()) {
+      await session.abortTransaction();
+    }
+    throw error;
+  } finally {
+    session.endSession();
+  }
+};
+
+// Delete article by id
+const deleteCourse = async (articleId: string) => {
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+
+    const deletedArticle = await Course.findByIdAndDelete(articleId, {
+      session,
+    });
+
+    if (!deletedArticle) {
+      throw new AppError(StatusCodes.NOT_FOUND, "Article not found");
+    }
+
+    await session.commitTransaction();
+    return deletedArticle;
+  } catch (error) {
+    if (session.inTransaction()) {
+      await session.abortTransaction();
+    }
+    throw error;
+  } finally {
+    session.endSession();
+  }
+};
+
 export const CourseServices = {
   CreateCourse,
   getAllCourses,
   getSingleCourse,
+  updateCourse,
+  deleteCourse,
 };

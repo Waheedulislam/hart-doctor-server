@@ -4,26 +4,17 @@ import { TCourses } from "./courses.interface";
 // Create the Category schema based on the interface
 const CourseSchema = new Schema<TCourses>(
   {
-    name: {
+    title: {
       type: String,
-      required: [true, "Category name is required"],
-      unique: true,
+    },
+    duration: {
+      type: String,
+    },
+    price: {
+      type: Number,
     },
     image: {
       type: String,
-      required: true,
-    },
-    country: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    countryImage: {
-      type: String,
-      required: true,
     },
   },
   {
@@ -31,5 +22,5 @@ const CourseSchema = new Schema<TCourses>(
   }
 );
 
-const Course = mongoose.model<TCourses>("Courses", CourseSchema);
+const Course = mongoose.model<TCourses>("Course", CourseSchema);
 export default Course;
