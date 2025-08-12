@@ -61,7 +61,7 @@ const updateCourse = async (
     );
 
     if (!updatedArticle) {
-      throw new AppError(StatusCodes.NOT_FOUND, "Article not found");
+      throw new AppError(StatusCodes.NOT_FOUND, "Course not found");
     }
 
     await session.commitTransaction();
@@ -88,7 +88,7 @@ const deleteCourse = async (articleId: string) => {
     });
 
     if (!deletedArticle) {
-      throw new AppError(StatusCodes.NOT_FOUND, "Article not found");
+      throw new AppError(StatusCodes.NOT_FOUND, "Course not found");
     }
 
     await session.commitTransaction();
