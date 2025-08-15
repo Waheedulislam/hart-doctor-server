@@ -10,6 +10,9 @@ const CourseSchema = new Schema<TCourses>(
     duration: {
       type: String,
     },
+    description: {
+      type: String,
+    },
     price: {
       type: Number,
     },

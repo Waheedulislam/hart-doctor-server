@@ -10,13 +10,9 @@ const ArticleSchema = new Schema<ArticleDocument>(
       required: [true, "Article title is required"],
       unique: true,
     },
-    excerpt: {
+    description: {
       type: String,
-      required: [true, "Article excerpt is required"],
-    },
-    date: {
-      type: String,
-      required: [true, "Article date is required"],
+      required: [true, "Article description is required"],
     },
     readTime: {
       type: String,
@@ -34,13 +30,9 @@ const ArticleSchema = new Schema<ArticleDocument>(
       type: String,
       required: [true, "Article image is required"],
     },
-    href: {
-      type: String,
-      required: [true, "Article link is required"],
-    },
   },
   {
-    timestamps: true, // adds createdAt, updatedAt fields
+    timestamps: true,
   }
 );
 

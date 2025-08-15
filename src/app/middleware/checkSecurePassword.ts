@@ -15,7 +15,7 @@ export const checkSecurePassword = (
       success: false,
       message: "Secure password is required",
     });
-    return; // void return
+    return;
   }
 
   if (securePassword !== SECURE_PASSWORD) {
@@ -23,7 +23,7 @@ export const checkSecurePassword = (
       success: false,
       message: "Invalid secure password",
     });
-    return; // void return
+    return;
   }
 
   // valid password, remove from body and continue
