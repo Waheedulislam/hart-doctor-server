@@ -12,7 +12,8 @@ const app: Application = express();
 // ✅ Allowed origins
 const allowedOrigins = [
   "http://localhost:3000", // Development
-  // "https://www.traveltoyourteacher.com", // Production
+  "https://hartdoctor.netlify.app",
+  "https://hart-doctor.vercel.app/",
 ];
 
 // ✅ CORS middleware setup
