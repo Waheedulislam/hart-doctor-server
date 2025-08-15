@@ -3,4 +3,5 @@ export type TCourses = {
   duration: string;
   price: number;
   image: string;
+  description: string;
 };
