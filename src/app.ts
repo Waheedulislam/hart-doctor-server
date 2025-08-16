@@ -13,7 +13,7 @@ const app: Application = express();
 const allowedOrigins = [
   "http://localhost:3000", // Development
   "https://hartdoctor.netlify.app",
-  "https://hart-doctor.vercel.app/",
+  "https://hart-doctor.vercel.app",
 ];
 
 // ✅ CORS middleware setup
