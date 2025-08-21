@@ -3,6 +3,9 @@ export type TCourses = {
   duration: string;
   price: number;
   image: string;
-  learnDescription:string;
+  learnDescription: string;
   description: string;
+  TrainingObjectives: string;
+  CourseContents: string;
+  WhoCanJoin: string;
 };

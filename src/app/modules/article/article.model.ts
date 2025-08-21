@@ -36,5 +36,5 @@ const ArticleSchema = new Schema<ArticleDocument>(
   }
 );
 
-const Article = mongoose.model<ArticleDocument>("Articlesss", ArticleSchema);
+const Article = mongoose.model<ArticleDocument>("Article", ArticleSchema);
 export default Article;
