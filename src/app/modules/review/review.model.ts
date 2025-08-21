@@ -33,5 +33,5 @@ const ReviewSchema = new Schema<TReview>(
   }
 );
 
-const Review = mongoose.model<TReview>("Reviewsss", ReviewSchema);
+const Review = mongoose.model<TReview>("Reviews", ReviewSchema);
 export default Review;

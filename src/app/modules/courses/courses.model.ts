@@ -16,6 +16,15 @@ const CourseSchema = new Schema<TCourses>(
     description: {
       type: String,
     },
+    TrainingObjectives: {
+      type: String,
+    },
+    CourseContents: {
+      type: String,
+    },
+    WhoCanJoin: {
+      type: String,
+    },
     price: {
       type: Number,
     },
